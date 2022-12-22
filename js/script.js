@@ -1,7 +1,7 @@
 //! operazioni preliminari
 const galleryElement = document.getElementById('gallery');
-const next = document.getElementById('"arrow-right');
-const prev = document.getElementById('"arrow-left');
+const next = document.getElementById('arrow-right');
+const prev = document.getElementById('arrow-left');
 // recupero le immagini
 
 //* array 
@@ -30,7 +30,8 @@ const data = [
 ];
 
 
-let activeIndex = 0;
+
+
 
 // ciclo per girare nei elementi dell'aray
 let carosel = '';
@@ -45,9 +46,22 @@ for(let i = 0; i < data.length; i++){
     </div>
     ` 
 }
+
+let activeIndex = 0;
 galleryElement.innerHTML += carosel;  
 const img = document.querySelectorAll('#gallery img');
 const description = document.querySelectorAll('#gallery div');
 
 img[activeIndex].classList.add('active');
 description[activeIndex].classList.add('active');
+
+//incremento l'indice per cambbiare immagine
+next.addEventListener("click" , function () {
+  img[activeIndex].classList.remove('active');
+  activeIndex ++;
+  if(activeIndex === data.lenght){
+    activeIndex = 0;
+  } 
+  img[activeIndex].classList.add('active');
+  console.log(activeIndex)
+});

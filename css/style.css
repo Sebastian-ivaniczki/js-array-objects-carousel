@@ -32,17 +32,17 @@ img{
     cursor: pointer;
 }
 .fa-arrow-left{
-    left: -30px;
+    left: 0;
     top: 50%;
     
 }
 .fa-arrow-right{
-    right: -30px;
+    right: 0;
     top: 50%;
 }
 #gallery div{
     color: #fff;
-    position: absolute;
+    position: relative;
     z-index: 2;
     right: 1rem;
     bottom: 1rem;
