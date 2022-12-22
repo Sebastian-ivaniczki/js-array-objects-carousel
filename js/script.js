@@ -67,3 +67,14 @@ next.addEventListener("click" , function () {
   description[activeIndex].classList.add('active');
   console.log(activeIndex)
 });
+prev.addEventListener("click" , function () {
+  img[activeIndex].classList.remove('active');
+  description[activeIndex].classList.remove('active');
+  activeIndex--;
+  if(activeIndex < 0){
+    activeIndex = data.length-1;
+  } 
+  img[activeIndex].classList.add('active');
+  description[activeIndex].classList.add('active');
+  console.log(activeIndex)
+});
