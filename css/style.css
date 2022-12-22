@@ -1,50 +1,49 @@
 .container{
     height: 100vh;
-}
-
-/* display */
-
-.active{
-    display: block;
+    position: relative;
 }
 
 /*! gallery */
-#gallery{
+.gallery{
     height: 400px;
-    width: 800px;
+    width: 900px;
     position: relative;
     
 }
 img{
-    
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
     display: none;
+    height: 400px;
+    width: 900px;
+    object-fit: cover;
     
+}
+.active{
+    display: block;
 }
 
 .fa-solid{
    
     position: absolute;
     font-size: 30px;
-    z-index: 1;
+    
     cursor: pointer;
 }
 .fa-arrow-left{
-    left: 0;
+    left: 90px;
     top: 50%;
     
 }
 .fa-arrow-right{
-    right: 0;
+    right: 90px;
     top: 50%;
 }
-#gallery div{
+.description{
     color: #fff;
-    position: relative;
-    z-index: 2;
-    right: 1rem;
-    bottom: 1rem;
-    display: none;
+    width: 60%;
+    position: absolute;
+    bottom: 11rem;
+    left: 13rem;
+    z-index: 1;
+    
+    
 }

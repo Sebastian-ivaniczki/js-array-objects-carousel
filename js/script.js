@@ -39,42 +39,46 @@ for(let i = 0; i < data.length; i++){
   const dataField = data[i]
   
   carosel += ` 
-    <img src="${dataField.image}" alt="${dataField.title}">
-    <div>
-      <h3>${dataField.title}</h3>
-      <p>${dataField.text}</p>
-    </div>
+      <img src="${dataField.image}" alt="${dataField.title}">
+      <div class="description d-none">
+        <h3>${dataField.title}</h3>
+        <p>${dataField.text}</p>
+      </div>
     ` 
 }
 
 let activeIndex = 0;
-galleryElement.innerHTML += carosel;  
+galleryElement.innerHTML = carosel;  
 const img = document.querySelectorAll('#gallery img');
-const description = document.querySelectorAll('#gallery div');
+const description = document.querySelectorAll('.description');
 
 img[activeIndex].classList.add('active');
+description[activeIndex].classList.remove('d-none');
 description[activeIndex].classList.add('active');
-
 //incremento l'indice per cambbiare immagine
 next.addEventListener("click" , function () {
   img[activeIndex].classList.remove('active');
+  description[activeIndex].classList.add('d-none');
   description[activeIndex].classList.remove('active');
   activeIndex++;
   if(activeIndex === data.length){
     activeIndex = 0;
   } 
   img[activeIndex].classList.add('active');
+  description[activeIndex].classList.remove('d-none');
   description[activeIndex].classList.add('active');
   console.log(activeIndex)
 });
 prev.addEventListener("click" , function () {
   img[activeIndex].classList.remove('active');
+  description[activeIndex].classList.add('d-none');
   description[activeIndex].classList.remove('active');
   activeIndex--;
   if(activeIndex < 0){
     activeIndex = data.length-1;
   } 
   img[activeIndex].classList.add('active');
+  description[activeIndex].classList.remove('d-none');
   description[activeIndex].classList.add('active');
   console.log(activeIndex)
 });
