@@ -58,10 +58,12 @@ description[activeIndex].classList.add('active');
 //incremento l'indice per cambbiare immagine
 next.addEventListener("click" , function () {
   img[activeIndex].classList.remove('active');
-  activeIndex ++;
-  if(activeIndex === data.lenght){
+  description[activeIndex].classList.remove('active');
+  activeIndex++;
+  if(activeIndex === data.length){
     activeIndex = 0;
   } 
   img[activeIndex].classList.add('active');
+  description[activeIndex].classList.add('active');
   console.log(activeIndex)
 });
