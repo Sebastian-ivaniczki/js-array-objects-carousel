@@ -1,5 +1,5 @@
 .container{
-    height: 100vh;
+    margin-top: 12rem;
     position: relative;
 }
 
@@ -22,10 +22,7 @@ img{
 }
 
 .fa-solid{
-   
-    position: absolute;
     font-size: 30px;
-    
     cursor: pointer;
 }
 .fa-arrow-left{
@@ -41,8 +38,8 @@ img{
     color: #fff;
     width: 60%;
     position: absolute;
-    bottom: 11rem;
-    left: 13rem;
+    bottom: 0rem;
+    left: 14rem;
     z-index: 1;
     
     

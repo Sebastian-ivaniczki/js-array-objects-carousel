@@ -28,27 +28,27 @@ const data = [
     text: "Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
   }
 ];
-
-
-
-
-
-// ciclo per girare nei elementi dell'aray
-let carosel = '';
-for(let i = 0; i < data.length; i++){
-  const dataField = data[i]
-  
-  carosel += ` 
+const createCarousel = (data, galleryElement) => {
+  let carousel = '';
+  for (let i = 0; i < data.length; i++) {
+    const dataField = data[i];
+    carousel += ` 
       <img src="${dataField.image}" alt="${dataField.title}">
       <div class="description d-none">
         <h3>${dataField.title}</h3>
         <p>${dataField.text}</p>
       </div>
-    ` 
+    `;
+  }
+  galleryElement.innerHTML = carousel;
 }
 
+
+
+
+createCarousel(data, galleryElement)
+
 let activeIndex = 0;
-galleryElement.innerHTML = carosel;  
 const img = document.querySelectorAll('#gallery img');
 const description = document.querySelectorAll('.description');
 
